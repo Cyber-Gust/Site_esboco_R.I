@@ -1,0 +1,28 @@
+/* Importa as diretivas base do Tailwind CSS. */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Aqui podemos adicionar estilos globais ou criar classes utilitárias personalizadas.
+*/
+body {
+  /* Um anti-aliasing suave para as fontes, deixando o texto mais agradável de ler. */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Classe utilitária para esconder a barra de rolagem.
+  Usamos isso nos nossos carrosséis para um visual mais limpo.
+*/
+@layer utilities {
+  .scrollbar-hide {
+    /* Firefox */
+    scrollbar-width: none;
+    /* IE and Edge */
+    -ms-overflow-style: none;
+  }
+  .scrollbar-hide::-webkit-scrollbar {
+    /* Chrome, Safari and Opera */
+    display: none;
+  }
+}
