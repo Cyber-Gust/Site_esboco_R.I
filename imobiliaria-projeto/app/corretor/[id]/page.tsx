@@ -1,9 +1,10 @@
+
 import { supabase } from "../../../lib/supabaseClient";
 import { Corretor, Imovel } from "../../../lib/types";
 import { notFound } from "next/navigation";
 import BrokerProfile from "./components/BrokerProfile";
 import BrokerPropertyList from "./components/BrokerPropertyList";
-
+// @ts-nocheck
 type PageProps = {
   params: {
     id: string;

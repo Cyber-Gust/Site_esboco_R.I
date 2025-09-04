@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { Corretor } from "../../../../lib/types";
-import { Mail, MessageSquare, Phone } from "lucide-react";
+import { Mail, MessageSquare} from "lucide-react";
 
 interface ProfileProps {
   corretor: Corretor;
