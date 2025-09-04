@@ -4,12 +4,6 @@ import { Corretor, Imovel } from "../../../lib/types";
 import { notFound } from "next/navigation";
 import BrokerProfile from "./components/BrokerProfile";
 import BrokerPropertyList from "./components/BrokerPropertyList";
-// @ts-nocheck
-type PageProps = {
-  params: {
-    id: string;
-  };
-};
 
 // Função para buscar os dados do corretor e seus imóveis
 async function getBrokerData(id: string) {
@@ -52,10 +46,9 @@ async function getBrokerData(id: string) {
   };
 }
 
-export default async function BrokerPage({ params }: PageProps) {
+export default async function BrokerPage({ params }: { params: { id: string } }) {
   const { corretor, imoveis } = await getBrokerData(params.id);
 
-  // Se o corretor não for encontrado, exibe a página 404
   if (!corretor) {
     notFound();
   }
