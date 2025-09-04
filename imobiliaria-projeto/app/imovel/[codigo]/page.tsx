@@ -7,12 +7,6 @@ import ImageGallery from "./components/ImageGallery";
 import PropertyInfo from "./components/PropertyInfo";
 import ContactCard from "./components/ContactCard";
 
-type PageProps = {
-  params: {
-    codigo: string;
-  };
-};
-
 // Função para buscar um único imóvel pelo código
 async function getPropertyByCode(code: string): Promise<Imovel | null> {
   const { data, error } = await supabase
@@ -35,7 +29,7 @@ async function getPropertyByCode(code: string): Promise<Imovel | null> {
 }
 
 // A página é um Componente de Servidor que busca os dados
-export default async function PropertyPage({ params }: PageProps) {
+export default async function PropertyPage({ params }: { params: { codigo: string } }) {
   const property = await getPropertyByCode(params.codigo);
 
   // Se o imóvel não for encontrado, exibe uma página 404
